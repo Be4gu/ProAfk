@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js "></script>
+  </head>
+
+  <body class="bg-black">
+    <nav class="rounded py-2.5 px-8 sm:px-4">
+      <div class="container mx-auto flex flex-wrap items-center justify-between">
+        <div class="flex items-center">
+          <img src="image/logo_white.png" class="mr-3 h-6 sm:h-9" alt="AFK Logo" />
+        </div>
+        <div class="">
+          <button
+            type="button"
+            class="rounded-lg border border-lpurple px-3 py-2 text-center text-sm font-medium text-white hover:border-white hover:bg-lpurple focus:ring-transparent sm:px-5 sm:py-2.5"
+            type="button"
+            data-modal-toggle="authentication-modal"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main modal -->
+    <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
+      <div class="relative mt-24 h-full w-full max-w-md p-4 md:h-auto">
+        <!-- Modal content -->
+        <div class="relative rounded-lg bg-white shadow">
+          <div class="flex justify-end p-2">
+            <button
+              type="button"
+              class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+              data-modal-toggle="authentication-modal"
+            >
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <form class="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8" action="#">
+            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create your account!</h3>
+            <div>
+              <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Your email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple"
+                placeholder="name@company.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
+              <input
+                type="password"
+                name="password"
+                id="password1"
+                placeholder="••••••••"
+                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple"
+                required
+              />
+            </div>
+            <div>
+              <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Repeat password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="••••••••"
+                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple"
+                required
+              />
+            </div>
+            <button type="submit" class="w-full rounded-lg border bg-mpurple px-5 py-2.5 text-center text-sm font-medium text-white hover:border-white hover:bg-lpurple focus:ring-transparent">
+              Create account
+            </button>
+            <div class="text-sm font-medium text-gray-500">You have account? <a href="#" class="text-mpurple hover:underline">Login</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="flex flex-col lg:flex-row">
+      <div class="ls:order-1 order-2 flex justify-center lg:px-4">
+        <img src="image/index_1080_copy.png" alt="Imagen_Index" class="w-[380px] md:w-[600px] lg:w-full" />
+      </div>
+      <div class="order-1 mt-12 flex flex-col items-center justify-center gap-3 px-6 md:px-14 lg:order-2 lg:px-10 lg:pt-6">
+        <h1 class="pb-6 text-center text-[26px] text-lpurple md:text-3xl lg:pb-8 xl:text-4xl 2xl:text-5xl">¡Te damos la bienvenida a tu comunidad profesional!</h1>
+        <div class="p-2 text-center text-2xl text-white 2xl:text-3xl">Sing In</div>
+        <input
+          type="text"
+          id="index-login"
+          class="w-full rounded-lg border border-white/[.5] bg-white/[.16] text-white placeholder-white focus:border-lpurple focus:ring-transparent sm:text-sm lg:w-72 lg:text-base xl:h-12 2xl:w-96"
+          placeholder="Username"
+        />
+        <div class="relative w-full lg:w-72 xl:h-12 2xl:w-96">
+          <input
+            type="password"
+            id="index-password"
+            class="w-full rounded-lg border border-white/[.5] bg-white/[.16] text-white placeholder-white focus:border-lpurple focus:ring-transparent sm:text-sm lg:h-full lg:text-base"
+            placeholder="Password"
+          />
+          <button class="pointer-events absolute inset-y-0 right-0 p-3" id="show-password">
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" wight="18px" class="fill-white hover:fill-lpurple" viewBox="0 0 576 512">
+              <path
+                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z"
+              />
+            </svg>
+          </button>
+        </div>
+        <button
+          type="button"
+          class="mt-2 w-full rounded-lg border border-lpurple bg-mpurple px-10 py-2.5 text-center text-sm font-medium text-white hover:border-white hover:bg-lpurple lg:w-56 lg:text-base 2xl:w-64"
+        >
+          Sing In
+        </button>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
