@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="../../dist/output.css" />
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js "></script>
+  </head>
+
+  <body class="bg-black">
+    <nav class="md:mb-3 rounded border-gray-200 bg-white/[.12] px-2 py-2.5 sm:px-4">
+      <div class="container mx-auto flex max-w-[1160px] flex-wrap items-center justify-between">
+        <div class="flex items-center">
+          <img src="../../image/logo_white.png" class="mr-3 h-6 sm:h-9" alt="AFK Logo" />
+          <div class="relative mr-3 hidden sm:block md:mr-0">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 fill-white text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="email-adress-icon"
+              class="ml-2 block w-full rounded-lg border border-dprimary bg-white/[.16] p-2 pl-10 text-white placeholder-white focus:border-mpurple focus:ring-transparent sm:text-sm"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+        <div class="flex md:order-2">
+          <button
+            type="button"
+            class="ml-3 h-10 w-10 flex items-center rounded-lg text-sm text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:hidden"
+            type="button"
+            data-modal-toggle="authentication-modal"
+          >
+            <svg class="h-6 w-6 mx-auto fill-white text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <button
+            data-collapse-toggle="mobile-menu"
+            type="button"
+            class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6 fill-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg class="hidden h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full items-center justify-between md:order-3 hidden md:flex md:w-auto" id="mobile-menu">
+          <ul class="mt-4 flex flex-col items-center md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+            <li>
+              <button type="button" class="user h-10 w-10 truncate rounded-full border-2 border-white bg-white">
+                <img
+                  id="avatar"
+                  type="button"
+                  data-dropdown-toggle="userDropdown"
+                  data-dropdown-placement="bottom-start"
+                  class="h-9 w-9 cursor-pointer object-cover rounded-full"
+                  src="../../image/mixwell.png"
+                  alt="User dropdown"
+                />
+              </button>
+              <div id="userDropdown" class="z-10 hidden w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
+                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                  <div>Oscar Cañellas</div>
+                  <div class="truncate font-medium">oscarcañellas@gmail.com</div>
+                </div>
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownInformationButton">
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-white/[.12]">Profile</a>
+                  </li>
+                  <li>
+                    <a href="#" class="inline-flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Sign out<svg xmlns="http://www.w3.org/2000/svg" class="mt-1 ml-5 h-4 w-4" viewBox="0 0 512 512">
+                        <path
+                          d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z"
+                        /></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main modal -->
+    <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
+      <div class="relative mt-24 w-full h-full max-w-md p-4 md:h-auto">
+        <!-- Modal content -->
+        <div class="relative rounded-lg bg-white shadow">
+          <div class="flex justify-end p-2">
+            <button
+              type="button"
+              class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+              data-modal-toggle="authentication-modal"
+            >
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <form class="space-y-6 px-6 pb-6" action="#">
+            <div>
+              <label for="search" class="text-xl font-medium text-gray-900 dark:text-white">Search...</label>
+              <div class="relative w-full">
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="Search..."
+                  class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                />
+                <button
+                  type="submit"
+                  class="absolute border hover:bg-lpurple border-lpurple top-0 right-0 p-2.5 text-sm font-medium bg-mpurple text-white rounded-r-lg focus:ring-lpurple focus:border-lpurple"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="container mx-auto h-screen p-7 max-w-[1160px] bg-white/[.1] text-white">
+      <div class="flex flex-wrap">
+        <div class="outline-2 w-28 h-28 bg-white border-black ring border-4 ring-lpurple box-border mr-5">
+          <img src="../../image/mixwell.png" alt="Image_player" />
+        </div>
+        <div class="felx felx-col text-sm">
+          <div class="text-xl underline decoration-lcyan">MIXWELL</div>
+          <div class="text-lg">Oscar Cañellas</div>
+          <div class="flex w-full items-center gap-2">
+            <!-- Country 1 -->
+            <div class="w-16">Natal:</div>
+            <div class="w-4">
+              <img src="../../image/es.png" alt="Spain_Flag" />
+            </div>
+            <div>SPAIN</div>
+          </div>
+          <div class="flex w-full items-center gap-2">
+            <!-- Country 1 -->
+            <div class="w-16">Resident:</div>
+            <div class="w-4">
+              <img src="../../image/es.png" alt="Spain_Flag" />
+            </div>
+            <div>SPAIN</div>
+          </div>
+          <div class="flex gap-2 w-40">
+            <img src="../../image/email.png" alt="" class="h-5" />
+            <div class="text-ellipsis overflow-hidden hover:break-words">th3antodasdnio@giantsgaming.pro</div>
+          </div>
+        </div>
+        <div class="w-3/6 text-center mt-7">
+          <div class="text-xl underline decoration-lcyan">Langues</div>
+          <div>Spanish</div>
+          <div>English</div>
+        </div>
+        <div class="w-3/6 text-center mt-7">
+          <div class="text-xl underline decoration-lcyan">Roles</div>
+          <div>Sentinel</div>
+          <div>Smoker</div>
+          <div>IGL</div>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="../../js/index.js"></script>
+  </body>
+</html>
