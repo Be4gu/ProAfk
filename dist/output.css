@@ -555,6 +555,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 10;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
 .order-2 {
   order: 2;
 }
@@ -702,6 +706,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 3.5rem;
 }
 
+.h-\[74px\] {
+  height: 74px;
+}
+
 .h-32 {
   height: 8rem;
 }
@@ -758,6 +766,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
+.w-\[181px\] {
+  width: 181px;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -768,6 +784,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-\[1160px\] {
   max-width: 1160px;
+}
+
+.max-w-\[800px\] {
+  max-width: 800px;
 }
 
 .transform {
@@ -829,6 +849,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-divide-opacity));
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1064,6 +1088,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1223,6 +1252,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ring-opacity-0 {
   --tw-ring-opacity: 0;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .hover\:break-words:hover {
@@ -1691,9 +1725,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 0px;
   }
 
+  .xl\:text-center {
+    text-align: center;
+  }
+
   .xl\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 

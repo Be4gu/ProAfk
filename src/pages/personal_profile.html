@@ -145,9 +145,9 @@
 
     <!-- Main modal edit profile -->
     <div id="edit-profile-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
-      <div class="relative mt-24 w-full h-full max-w-md p-4 md:h-auto">
+      <div class="relative mt-24 xl:mt-0 w-full h-full max-w-[800px] p-4 md:h-auto">
         <!-- Modal content -->
-        <div class="relative rounded-lg bg-white shadow">
+        <div class="relative rounded-lg bg-white w-full shadow">
           <div class="flex justify-end p-2">
             <button
               type="button"
@@ -163,7 +163,95 @@
               </svg>
             </button>
           </div>
-          <form class="space-y-6 px-6 pb-6" action="#"></form>
+          <p class="xl:text-center xl:text-2xl font-bold">Edit your profile</p>
+          <form class="space-y-6 px-6 py-6" action="#">
+            <div class="w-96 gap-3 flex">
+              <div>
+                <div class="flex gap-3">
+                  <!-- Name/Surname -->
+                  <div>
+                    <label for="edit-name" class="w-full block p-1">Name</label>
+                    <input
+                      id="edit-name"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div>
+                    <label for="edit-surname" class="w-full block p-1">Surname</label>
+                    <input
+                      id="edit-surname"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Surame"
+                    />
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <!-- Nata/Resident countrye -->
+                  <div class="relative h-[74px] w-[181px]">
+                    <label for="edit-natal_country" class="w-full block p-1">Natal</label>
+                    <select
+                      id="edit-natal_country"
+                      type="text"
+                      class="w-[181px] rounded-lg border absolute overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Natal country"
+                      onfocus="this.size=5;"
+                      onblur="this.size=1;"
+                      onchange="this.size=1; this.blur()"
+                    >
+                      <option value="">Choose a country</option>
+                      <option value="">Choose a country</option>
+                    </select>
+                  </div>
+
+                  <div class="relative h-[74px] w-[181px]">
+                    <label for="edit-resident_country" class="w-full block p-1">Resident</label>
+                    <select
+                      id="edit-resident_country"
+                      type="text"
+                      class="w-[181px] rounded-lg border absolute overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Natal country"
+                      onfocus="this.size=5;"
+                      onblur="this.size=1;"
+                      onchange="this.size=1; this.blur()"
+                    >
+                      <option value="">Choose a country</option>
+                      <option value="">Choose a country</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="flex gap-3">
+                  <!-- Langues  -->
+                </div>
+                <div class="flex gap-3 justify-center items-center">
+                  <div class="h-[74px] w-[181px]">
+                    <label for="edit-langues" class="w-full block p-1">Langues</label>
+                    <select
+                      id="edit-langues"
+                      type="text"
+                      class="w-[181px] rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Natal country"
+                      onfocus="this.size=5;"
+                      onblur="this.size=1;"
+                      onchange="this.size=1; this.blur()"
+                    >
+                      <option value="a">a</option>
+                      <option value="b">b</option>
+                      <option value="c">c</option>
+                      <option value="d">d</option>
+                      <option value="e">e</option>
+                    </select>
+                    <button id="edit-add-langues-btn">ADD</button>
+                  </div>
+                  <div id="edit-add-langues"></div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
