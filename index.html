@@ -10,7 +10,7 @@
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js "></script>
   </head>
 
-  <body class="bg-black">
+  <body class="bg-black" id="body">
     <nav class="rounded py-2.5 px-8 sm:px-4">
       <div class="container mx-auto flex flex-wrap items-center justify-between">
         <div class="flex items-center">
@@ -49,46 +49,7 @@
               </svg>
             </button>
           </div>
-          <form class="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8" action="#">
-            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create your account!</h3>
-            <div>
-              <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Your email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-lpurple focus:ring-lpurple"
-                placeholder="name@company.com"
-                required
-              />
-            </div>
-            <div>
-              <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Your password</label>
-              <input
-                type="password"
-                name="password"
-                id="password1"
-                placeholder="••••••••"
-                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-lpurple focus:ring-lpurple"
-                required
-              />
-            </div>
-            <div>
-              <label for="password" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Repeat password</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="••••••••"
-                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-lpurple focus:ring-lpurple"
-                required
-              />
-            </div>
-            <button type="submit" class="w-full rounded-lg border bg-mpurple px-5 py-2.5 text-center text-sm font-medium text-white hover:border-white hover:bg-lpurple focus:ring-transparent">
-              Create account
-            </button>
-            <div class="text-sm font-medium text-gray-500">You have account? <a href="#" class="text-mpurple hover:underline">Login</a></div>
-          </form>
+          <form class="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8" action="#"></form>
         </div>
       </div>
     </div>
@@ -100,14 +61,17 @@
       <div class="order-1 mt-12 flex flex-col items-center justify-center gap-3 px-6 md:px-14 lg:order-2 lg:px-10 lg:pt-6">
         <h1 class="pb-6 text-center text-[26px] text-lpurple md:text-3xl lg:pb-8 xl:text-4xl 2xl:text-5xl">¡Te damos la bienvenida a tu comunidad profesional!</h1>
         <div class="p-2 text-center text-2xl text-white 2xl:text-3xl">Sing In</div>
+
         <input
+          autocomplete="off"
           type="text"
-          id="index-login"
+          id="index-email_login"
           class="w-full rounded-lg border border-white/[.5] bg-white/[.16] text-white placeholder-white focus:border-lpurple focus:ring-transparent sm:text-sm lg:w-72 lg:text-base xl:h-12 2xl:w-96"
           placeholder="Username"
         />
         <div class="relative w-full lg:w-72 xl:h-12 2xl:w-96">
           <input
+            autocomplete="off"
             type="password"
             id="index-password"
             class="w-full rounded-lg border border-white/[.5] bg-white/[.16] text-white placeholder-white focus:border-lpurple focus:ring-transparent sm:text-sm lg:h-full lg:text-base"
@@ -121,7 +85,10 @@
             </svg>
           </button>
         </div>
+        <div class="text-red-400 text-left w-full" id="login-error"></div>
+
         <button
+          id="index-login"
           type="button"
           class="mt-2 w-full rounded-lg border border-lpurple bg-mpurple px-10 py-2.5 text-center text-sm font-medium text-white hover:border-white hover:bg-lpurple lg:w-56 lg:text-base 2xl:w-64"
         >
@@ -131,6 +98,6 @@
     </section>
 
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script src="js/index.js"></script>
+    <script type="module" src="js/prueba.js"></script>
   </body>
 </html>
