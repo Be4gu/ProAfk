@@ -1,89 +1,164 @@
-let list_langues = [];
-let list_roles = [];
+if (!window.localStorage.log) {
+  window.location.replace('../../index.html');
+} else {
+  $('#spinner').addClass('hidden');
+  $('#body').removeClass('hidden');
+}
 
-fetch("http://localhost:3001/api/users/629360cc3443b4b4f6aada27")
+//Importa las funciones
+import { paintSelect, addRoleLang, deleteRoleLang, paintRoleLang, addClub } from './controllers/paint_selects.js';
+import { validateDate, paintSlashDate, validateReuired } from './controllers/validation.js';
+import { user } from './controllers/paint_profile.js';
+
+//Impoorta las variables
+import { list_langues, list_roles, clubs } from './controllers/paint_selects.js';
+
+const log = JSON.parse(window.localStorage.getItem('log'));
+const idUser = log.id;
+console.log(idUser);
+user(idUser);
+
+paintSelect('languages', 'langues');
+paintSelect('roles', 'roles');
+paintSelect('clubs', 'clubs');
+
+fetch(`http://localhost:3001/api/users/${idUser}`)
   .then((resp) => resp.json())
   .then(function (data) {
-    list_langues = data.language;
-    paintRoleLang("langues", list_langues);
-    data.role.forEach((ele) => {
-      list_roles.push(ele.name);
+    $('#edit-name').val(data.name);
+    $('#edit-nickName').val(data.nickName);
+    $('#edit-contactEmail').val(data.email);
+    $('#edit-surname').val(data.surname);
+    $('#edit-twitter').val(data.linkTwitter);
+    $('#edit-vlr').val(data.linkVlr);
+    $('#edit-twitch').val(data.linkTwitch);
+    data.language.forEach((element) => {
+      list_langues.push(element);
     });
-    paintRoleLang("roles", list_roles);
+
+    data.role.forEach((element) => {
+      list_roles.push(element);
+    });
+    paintRoleLang('langues', data.language);
+    paintRoleLang('roles', data.role);
+    let cad;
+    data.clubs.forEach((ele) => {
+      cad = ele.idClub.name + ' - ' + ele.entryDate + ' - ' + ele.exitDate;
+      clubs.push({ name: cad, id: ele.idClub.id });
+    });
+    paintRoleLang('clubs', clubs);
+    paintSelect('countries', 'natal_country', data.natalCountry.name);
+    paintSelect('countries', 'resident_country', data.resCountry.name);
   });
 
-$("#edit-add-langues-btn").click(function () {
-  addRoleLang("langues");
-});
-$("#edit-add-roles-btn").click(function () {
-  addRoleLang("roles");
-});
-$("#edit-delete-roles-btn").click(function () {
-  deleteRoleLang("roles");
-});
-$("#edit-delete-langues-btn").click(function () {
-  deleteRoleLang("langues");
-});
-
-//Añade un rol/idioma en funcion de lo que el usuario seleccione
-function addRoleLang(role_lang) {
-  const lang_val = $("#edit-" + role_lang + " option:selected").val();
-  if (role_lang === "langues") {
-    if (list_langues.find((ele) => ele === lang_val) == undefined) {
-      list_langues.push(lang_val);
-      paintRoleLang(role_lang, list_langues);
-    }
-  } else if (role_lang === "roles") {
-    if (list_roles.find((ele) => ele === lang_val) == undefined) {
-      list_roles.push(lang_val);
-      paintRoleLang(role_lang, list_roles);
-    }
+//Events buttons edit page
+$('#edit-add-clubs-btn').click(function () {
+  const flag = validateDate('#edit-start_date', '#edit-end_date');
+  if (flag === true) {
+    $('#edit-errors_club').text('');
+    addClub();
+  } else {
+    $('#edit-errors_club').text(flag.error);
   }
-}
+});
+$('#edit-add-langues-btn').click(function () {
+  addRoleLang('langues');
+});
+$('#edit-add-roles-btn').click(function () {
+  addRoleLang('roles');
+});
+$('#edit-delete-roles-btn').click(function () {
+  deleteRoleLang('roles');
+});
+$('#edit-delete-clubs-btn').click(function () {
+  deleteRoleLang('clubs');
+});
+$('#edit-delete-langues-btn').click(function () {
+  deleteRoleLang('langues');
+});
+$('#edit-start_date').keyup(function () {
+  paintSlashDate('start');
+});
+$('#edit-end_date').keyup(function () {
+  paintSlashDate('end');
+});
 
-//Elimina un rol/idioma por si el usuario quiere modificar alguno
-function deleteRoleLang(role_lang) {
-  const checked = document.getElementsByName(role_lang);
-  const langues_checked = [];
-  checked.forEach((element) => {
-    if (element.checked === true) {
-      langues_checked.push(element.value);
-    }
+$('#edit-save').click(function createJson() {
+  const name = $('#edit-name').val().trim();
+  const surname = $('#edit-surname').val().trim();
+  const contactEmail = $('#edit-contactEmail').val().trim();
+  const nickName = $('#edit-nickName').val().trim();
+  const natalCountry = $('#edit-natal_country option:selected').val();
+  const residentCountry = $('#edit-resident_country option:selected').val();
+  const linkTwitter = $('#edit-twitter').val().trim();
+  const linkVlr = $('#edit-twitch').val().trim();
+  const linkTwitch = $('#edit-vlr').val().trim();
+  let list_clubs = [];
+  clubs.forEach((ele) => {
+    const c = ele.name.split(' - ');
+    list_clubs.push({
+      idClub: ele.id,
+      entryDate: c[1],
+      exitDate: c[2],
+    });
   });
-  if (role_lang === "langues") {
-    const elementos_filtred = list_langues.filter(function (obj) {
-      return langues_checked.indexOf(obj) === -1;
+  console.log(list_clubs);
+  const objJson = {
+    name,
+    surname,
+    nickName,
+    contactEmail,
+    natalCountry,
+    residentCountry,
+    linkTwitch,
+    linkTwitter,
+    linkVlr,
+    list_langues,
+    list_roles,
+    list_clubs,
+  };
+  const errors = validateReuired(objJson);
+  if (errors !== true) {
+    errors.forEach((ele) => {
+      $(`#edit-error-${ele.name}`).text(ele.error);
     });
-    list_langues = elementos_filtred;
-    paintRoleLang(role_lang, list_langues);
-  } else if (role_lang === "roles") {
-    const elementos_filtred = list_roles.filter(function (obj) {
-      return langues_checked.indexOf(obj) === -1;
-    });
-    list_roles = elementos_filtred;
-    paintRoleLang(role_lang, list_roles);
+  } else {
+    const file = $('#edit-image').prop('files')[0];
+    const token = JSON.parse(window.localStorage.getItem('log'));
+    console.log(token);
+    if (file !== undefined) {
+      saveImage(file, '62962920301744dbfdaa3f02');
+    }
+    const url = `http://localhost:3001/api/users/62962920301744dbfdaa3f02`;
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token.token}`,
+      },
+      body: JSON.stringify(objJson),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+      });
+    // }
   }
-}
-//Pinta los roles e idiomas en funcion de lo que ya tiene en la base de datos
-function paintRoleLang(role_lang, elements) {
-  const c = document.getElementById("edit-add-" + role_lang);
-  c.innerHTML = "";
-  for (let i = 0; i < elements.length; i++) {
-    const div = document.createElement("div");
-    const newLabel = document.createElement("label");
-    newLabel.setAttribute("for", `${role_lang}` + i);
-    newLabel.classList.add("mr-2");
-    newLabel.innerHTML = elements[i];
+});
 
-    const newCheckbox = document.createElement("input");
-    newCheckbox.setAttribute("type", "checkbox");
-    newCheckbox.setAttribute("id", `${role_lang}` + i);
-    newCheckbox.setAttribute("name", `${role_lang}`);
-    newCheckbox.setAttribute("value", elements[i]);
-    newCheckbox.classList.add("w-5", "h-5", "text-lpurple", "bg-gray-100", "rounded-full", "border-gray-300", "focus:ring-transparent");
-    div.classList.add("flex", "gap-2", "items-center");
-    div.appendChild(newCheckbox);
-    div.appendChild(newLabel);
-    c.appendChild(div);
-  }
+function saveImage(input, id_user) {
+  let reader = new FileReader();
+  reader.onloadend = () => {
+    const url = `http://localhost:3001/api/users/image/${id_user}`;
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ image: reader.result }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {});
+  };
+  reader.readAsDataURL(input);
 }

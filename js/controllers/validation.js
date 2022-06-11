@@ -1,548 +1,88 @@
-[
-  {
-    name: "Abkhaz",
-  },
-  {
-    name: "Afar",
-  },
-  {
-    name: "Afrikaans",
-  },
-  {
-    name: "Akan",
-  },
-  {
-    name: "Albanian",
-  },
-  {
-    name: "Amharic",
-  },
-  {
-    name: "Arabic",
-  },
-  {
-    name: "Aragonese",
-  },
-  {
-    name: "Armenian",
-  },
-  {
-    name: "Assamese",
-  },
-  {
-    name: "Avaric",
-  },
-  {
-    name: "Avestan",
-  },
-  {
-    name: "Aymara",
-  },
-  {
-    name: "Azerbaijani",
-  },
-  {
-    name: "Bambara",
-  },
-  {
-    name: "Bashkir",
-  },
-  {
-    name: "Basque",
-  },
-  {
-    name: "Belarusian",
-  },
-  {
-    name: "Bengali",
-  },
-  {
-    name: "Bihari",
-  },
-  {
-    name: "Bislama",
-  },
-  {
-    name: "Bosnian",
-  },
-  {
-    name: "Breton",
-  },
-  {
-    name: "Bulgarian",
-  },
-  {
-    name: "Burmese",
-  },
-  {
-    name: "Catalan Valencian",
-  },
-  {
-    name: "Chamorro",
-  },
-  {
-    name: "Chechen",
-  },
-  {
-    name: "Chichewa Chewa Nyanja",
-  },
-  {
-    name: "Chinese",
-  },
-  {
-    name: "Chuvash",
-  },
-  {
-    name: "Cornish",
-  },
-  {
-    name: "Corsican",
-  },
-  {
-    name: "Cree",
-  },
-  {
-    name: "Croatian",
-  },
-  {
-    name: "Czech",
-  },
-  {
-    name: "Danish",
-  },
-  {
-    name: "Divehi Dhivehi Maldivian",
-  },
-  {
-    name: "Dutch",
-  },
-  {
-    name: "English",
-  },
-  {
-    name: "Esperanto",
-  },
-  {
-    name: "Estonian",
-  },
-  {
-    name: "Ewe",
-  },
-  {
-    name: "Faroese",
-  },
-  {
-    name: "Fijian",
-  },
-  {
-    name: "Finnish",
-  },
-  {
-    name: "French",
-  },
-  {
-    name: "Fula Fulah Pulaar Pular",
-  },
-  {
-    name: "Galician",
-  },
-  {
-    name: "Georgian",
-  },
-  {
-    name: "German",
-  },
-  {
-    name: "Greek Modern",
-  },
-  {
-    name: "Guaraní",
-  },
-  {
-    name: "Gujarati",
-  },
-  {
-    name: "Haitian Haitian Creole",
-  },
-  {
-    name: "Hausa",
-  },
-  {
-    name: "Hebrew (modern)",
-  },
-  {
-    name: "Herero",
-  },
-  {
-    name: "Hindi",
-  },
-  {
-    name: "Hiri Motu",
-  },
-  {
-    name: "Hungarian",
-  },
-  {
-    name: "Interlingua",
-  },
-  {
-    name: "Indonesian",
-  },
-  {
-    name: "Interlingue",
-  },
-  {
-    name: "Irish",
-  },
-  {
-    name: "Igbo",
-  },
-  {
-    name: "Inupiaq",
-  },
-  {
-    name: "Ido",
-  },
-  {
-    name: "Icelandic",
-  },
-  {
-    name: "Italian",
-  },
-  {
-    name: "Inuktitut",
-  },
-  {
-    name: "Japanese",
-  },
-  {
-    name: "Javanese",
-  },
-  {
-    name: "Kalaallisut Greenlandic",
-  },
-  {
-    name: "Kannada",
-  },
-  {
-    name: "Kanuri",
-  },
-  {
-    name: "Kashmiri",
-  },
-  {
-    name: "Kazakh",
-  },
-  {
-    name: "Khmer",
-  },
-  {
-    name: "Kikuyu Gikuyu",
-  },
-  {
-    name: "Kinyarwanda",
-  },
-  {
-    name: "Kirghiz Kyrgyz",
-  },
-  {
-    name: "Komi",
-  },
-  {
-    name: "Kongo",
-  },
-  {
-    name: "Korean",
-  },
-  {
-    name: "Kurdish",
-  },
-  {
-    name: "Kwanyama Kuanyama",
-  },
-  {
-    name: "Latin",
-  },
-  {
-    name: "Luxembourgish Letzeburgesch",
-  },
-  {
-    name: "Luganda",
-  },
-  {
-    name: "Limburgish Limburgan Limburger",
-  },
-  {
-    name: "Lingala",
-  },
-  {
-    name: "Lao",
-  },
-  {
-    name: "Lithuanian",
-  },
-  {
-    name: "Luba-Katang",
-  },
-  {
-    name: "Latvian",
-  },
-  {
-    name: "Manx",
-  },
-  {
-    name: "Macedonian",
-  },
-  {
-    name: "Malagasy",
-  },
-  {
-    name: "Malay",
-  },
-  {
-    name: "Malayalam",
-  },
-  {
-    name: "Maltese",
-  },
-  {
-    name: "Māori",
-  },
-  {
-    name: "Marathi (Marāṭhī)",
-  },
-  {
-    name: "Marshallese",
-  },
-  {
-    name: "Mongolian",
-  },
-  {
-    name: "Nauru",
-  },
-  {
-    name: "Navajo Navaho",
-  },
-  {
-    name: "Norwegian Bokmål",
-  },
-  {
-    name: "North Ndebele",
-  },
-  {
-    name: "Nepali",
-  },
-  {
-    name: "Ndonga",
-  },
-  {
-    name: "Norwegian Nynorsk",
-  },
-  {
-    name: "Norwegian",
-  },
-  {
-    name: "Nuosu",
-  },
-  {
-    name: "South Ndebele",
-  },
-  {
-    name: "Occitan",
-  },
-  {
-    name: "Ojibwe Ojibwa",
-  },
-  {
-    name: "Old Church Slavonic Church Slavic Church Slavonic Old Bulgarian Old Slavonic",
-  },
-  {
-    name: "Oromo",
-  },
-  {
-    name: "Oriya",
-  },
-  {
-    name: "Ossetian Ossetic",
-  },
-  {
-    name: "Panjabi Punjabi",
-  },
-  {
-    name: "Pāli",
-  },
-  {
-    name: "Persian",
-  },
-  {
-    name: "Polish",
-  },
-  {
-    name: "Pashto Pushto",
-  },
-  {
-    name: "Portuguese",
-  },
-  {
-    name: "Quechua",
-  },
-  {
-    name: "Romansh",
-  },
-  {
-    name: "Kirundi",
-  },
-  {
-    name: "Romanian Moldavian Moldovan",
-  },
-  {
-    name: "Russian",
-  },
-  {
-    name: "Sanskrit (Saṁskṛta)",
-  },
-  {
-    name: "Sardinian",
-  },
-  {
-    name: "Sindhi",
-  },
-  {
-    name: "Northern Sami",
-  },
-  {
-    name: "Samoan",
-  },
-  {
-    name: "Sango",
-  },
-  {
-    name: "Serbian",
-  },
-  {
-    name: "Scottish Gaelic Gaelic",
-  },
-  {
-    name: "Shona",
-  },
-  {
-    name: "Sinhala Sinhalese",
-  },
-  {
-    name: "Slovak",
-  },
-  {
-    name: "Slovene",
-  },
-  {
-    name: "Somali",
-  },
-  {
-    name: "Southern Sotho",
-  },
-  {
-    name: "Spanish Castilian",
-  },
-  {
-    name: "Sundanese",
-  },
-  {
-    name: "Swahili",
-  },
-  {
-    name: "Swati",
-  },
-  {
-    name: "Swedish",
-  },
-  {
-    name: "Tamil",
-  },
-  {
-    name: "Telugu",
-  },
-  {
-    name: "Tajik",
-  },
-  {
-    name: "Thai",
-  },
-  {
-    name: "Tigrinya",
-  },
-  {
-    name: "Tibetan Standard Tibetan Central",
-  },
-  {
-    name: "Turkmen",
-  },
-  {
-    name: "Tagalog",
-  },
-  {
-    name: "Tswana",
-  },
-  {
-    name: "Tonga (Tonga Islands)",
-  },
-  {
-    name: "Turkish",
-  },
-  {
-    name: "Tsonga",
-  },
-  {
-    name: "Tatar",
-  },
-  {
-    name: "Twi",
-  },
-  {
-    name: "Tahitian",
-  },
-  {
-    name: "Uighur Uyghur",
-  },
-  {
-    name: "Ukrainian",
-  },
-  {
-    name: "Urdu",
-  },
-  {
-    name: "Uzbek",
-  },
-  {
-    name: "Venda",
-  },
-  {
-    name: "Vietnamese",
-  },
-  {
-    name: "Volapük",
-  },
-  {
-    name: "Walloon",
-  },
-  {
-    name: "Welsh",
-  },
-  {
-    name: "Wolof",
-  },
-  {
-    name: "Western Frisian",
-  },
-  {
-    name: "Xhosa",
-  },
-  {
-    name: "Yiddish",
-  },
-  {
-    name: "Yoruba",
-  },
-  {
-    name: "Zhuang Chuang",
-  },
-];
+function paintSlashDate(param) {
+  const value = $(`#edit-${param}_date`).val();
+  if (value > 0 && value < 13) {
+    if (value.length === 2) {
+      $(`#edit-${param}_date`).val(value + "/");
+    }
+  }
+}
+
+//Comprueba las fechas de entrada y salida
+function validateDate(dateEntry, dateExit) {
+  const valDateEntry = $(dateEntry).val().split("/");
+  const valDateExit = $(dateExit).val().split("/");
+  //Compara los años de la fecha de entrada y de salida.
+  const year = new Date().getFullYear();
+  if ($(dateEntry).val() === "") {
+    return { error: "Entry date is required" };
+  }
+  if (valDateEntry[0] < 1 || valDateEntry[0] > 12) {
+    return { error: `Icorrect month (01 - 12)` };
+  }
+  if (valDateEntry[1] < 2020 || valDateEntry[1] > year) {
+    return { error: `Icorrect entry year (2020 - ${year})` };
+  }
+  if ($(dateExit).val() !== "") {
+    if (valDateExit[0] < 1 || valDateExit[0] > 12) {
+      return { error: `Icorrect month (01 - 12)` };
+    }
+    if (valDateExit[1] < 2020 || valDateExit[1] > year) {
+      return { error: `Icorrect exit year (2020 - ${year})` };
+    }
+  }
+  if (valDateEntry[1] > valDateExit[1]) {
+    return { error: `La fecha de entrada debe ser menor` };
+  }
+  if (valDateEntry[1] === valDateExit[1]) {
+    if (valDateEntry[0] > valDateExit[0]) {
+      return { error: `La fecha de salida debe ser mayor` };
+    }
+  }
+  return true;
+}
+
+function validateReuired(list) {
+  let errors = [];
+  if (list.name === "") errors.push({ name: "name", error: "Name is required!" });
+  else if (!regexString(list.name)) errors.push({ name: "name", error: "Name format is incorrect!" });
+
+  if (list.surname === "") errors.push({ name: "surname", error: "Surname is required!" });
+  else if (!regexString(list.surname)) errors.push({ name: "surname", error: "Surname format is incorrect!" });
+
+  if (list.contactEmail === "") errors.push({ name: "contactEmail", error: "Contact email is required!" });
+  else if (!regexEmail(list.contactEmail)) errors.push({ name: "contactEmail", error: "Contact format is incorrect!" });
+
+  if (list.nickName === "") errors.push({ name: "nickName", error: "Nickname is required!" });
+  else if (!regexStringNumber(list.nickName)) errors.push({ name: "nickName", error: "Nickname format is incorrect!" });
+  if (list.natalCountry === "") errors.push({ natalCountry: "Natal country is required!" });
+
+  if (list.list_langues.length === 0) errors.push({ name: "langues", error: "Language is required!" });
+
+  if (errors.length > 0) return errors;
+
+  return true;
+}
+
+function regexString(input) {
+  let regex = /^[a-zA-Z\s]+$/gm;
+  return regex.test(input);
+}
+function regexStringNumber(input) {
+  let regex = /^[a-zA-Z0-9]+$/gm;
+  return regex.test(input);
+}
+function regexEmail(input) {
+  let regex = /^[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/gm;
+  return regex.test(input);
+}
+
+function userAndPassword(user, pass) {
+  const errors = [];
+  if (user === "") errors.push({ name: "user", error: "Email is required" });
+  else if (!regexEmail(user)) errors.push({ name: "user", error: "Email has malformated" });
+  if (pass === "") errors.push({ name: "pass", error: "Password is required" });
+  if (errors.length !== 0) return errors;
+  console.log(errors);
+  return true;
+}
+export { validateDate, paintSlashDate, validateReuired, userAndPassword };
