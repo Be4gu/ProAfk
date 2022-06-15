@@ -28,31 +28,8 @@
         <div class="container mx-auto flex max-w-[1160px] flex-wrap items-center justify-between">
           <div class="flex items-center">
             <img src="../../image/logo_white.png" class="mr-3 h-6 sm:h-9" alt="AFK Logo" />
-            <div class="relative mr-3 hidden sm:block md:mr-0">
-              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg class="h-5 w-5 fill-white text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <input
-                type="text"
-                id="email-adress-icon"
-                class="ml-2 block w-full rounded-lg border border-dprimary bg-white/[.16] p-2 pl-10 text-white placeholder-white focus:border-mpurple focus:ring-transparent sm:text-sm"
-                placeholder="Search..."
-              />
-            </div>
           </div>
           <div class="flex md:order-2">
-            <button
-              type="button"
-              class="ml-3 h-10 w-10 flex items-center rounded-lg text-sm text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:hidden"
-              type="button"
-              data-modal-toggle="search-modal"
-            >
-              <svg class="h-6 w-6 mx-auto fill-white text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-              </svg>
-            </button>
             <button
               data-collapse-toggle="mobile-menu"
               type="button"
@@ -78,6 +55,7 @@
           </div>
           <div class="w-full items-center justify-between md:order-3 hidden md:flex md:w-auto" id="mobile-menu">
             <ul class="mt-4 flex flex-col items-center md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+              <li class="sm:mb-0 mb-5"><a href="main.html" class="text-white rounded-lg hover:bg-white/[.2] font-bold p-4 bg-white/[.1]">Main</a></li>
               <li>
                 <button type="button" class="user h-10 w-10 truncate rounded-full border-2 border-white bg-white">
                   <img
@@ -93,7 +71,7 @@
                 <div id="userDropdown" class="z-10 hidden w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                   <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                     <div id="pp-menu-name"></div>
-                    <div class="truncate font-medium" id="pp-menu-email">oscarcañellas@gmail.com</div>
+                    <div class="truncate font-medium" id="pp-menu-email"></div>
                   </div>
                   <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownInformationButton">
                     <li>
@@ -118,51 +96,6 @@
         </div>
       </nav>
 
-      <!-- Main modal search -->
-      <div id="search-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
-        <div class="relative mt-24 w-full h-full max-w-md p-4 md:h-auto">
-          <!-- Modal content -->
-          <div class="relative rounded-lg bg-white shadow">
-            <div class="flex justify-end p-2">
-              <button
-                type="button"
-                class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
-                data-modal-toggle="search-modal"
-              >
-                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-            <form class="space-y-6 px-6 pb-6" action="#">
-              <div>
-                <label for="search" class="text-xl font-medium text-gray-900 dark:text-white">Search...</label>
-                <div class="relative w-full">
-                  <input
-                    type="text"
-                    id="search"
-                    placeholder="Search..."
-                    class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
-                  />
-                  <button
-                    type="submit"
-                    class="absolute border hover:bg-lpurple border-lpurple top-0 right-0 p-2.5 text-sm font-medium bg-mpurple text-white rounded-r-lg focus:ring-lpurple focus:border-lpurple"
-                  >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
       <!-- Main modal edit profile -->
       <div id="edit-profile-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
         <div class="relative mt-24 xl:mt-0 w-full h-full max-w-[850px] p-4 md:h-auto">
@@ -185,7 +118,7 @@
             </div>
             <p class="xl:text-center xl:text-2xl font-bold">Edit your profile</p>
             <form class="space-y-6 px-6 py-6" action="#">
-              <div class="w-96 gap-5 flex">
+              <div class="w-96 gap-5 flex flex-col sm:flex-row">
                 <div>
                   <div class="flex gap-3">
                     <!-- Name/Surname -->
@@ -194,7 +127,7 @@
                       <input
                         id="edit-name"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="Name"
                       />
                       <div id="edit-error-name" class="italic text-red-500 text-sm"></div>
@@ -204,7 +137,7 @@
                       <input
                         id="edit-surname"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="Surame"
                       />
                       <div id="edit-error-surname" class="italic text-red-500 text-sm"></div>
@@ -218,7 +151,7 @@
                       <input
                         id="edit-contactEmail"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="example@g.com"
                       />
                       <div id="edit-error-contactEmail" class="italic text-red-500 text-sm"></div>
@@ -228,7 +161,7 @@
                       <input
                         id="edit-nickName"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="Nickname"
                       />
                       <div id="edit-error-nickName" class="italic text-red-500 text-sm"></div>
@@ -236,13 +169,13 @@
                   </div>
                   <!-- Nata/Resident countrye -->
                   <div class="flex gap-3 mt-3">
-                    <div class="relative h-[74px] w-[181px]">
+                    <div class="relative h-[74px] sm:w-[181px] w-32">
                       <label for="edit-natal_country" class="w-full block p-1">Natal<span class="text-red-500">*</span></label>
                       <div id="edit-error-natal_country" class="italic absolute -bottom-5 text-red-500 text-sm"></div>
                       <select
                         id="edit-natal_country"
                         type="text"
-                        class="w-[181px] rounded-lg absolute border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-[181px] w-32 rounded-lg absolute border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
                         placeholder="Natal country"
                         onfocus="this.size=5;"
                         onblur="this.size=1;"
@@ -255,7 +188,7 @@
                       <select
                         id="edit-resident_country"
                         type="text"
-                        class="w-[181px] rounded-lg border absolute overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-[181px] w-32 rounded-lg border absolute overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
                         placeholder="Natal country"
                         onfocus="this.size=5;"
                         onblur="this.size=1;"
@@ -269,7 +202,7 @@
                       <input
                         id="edit-twitter"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="twitter.com/mixwell"
                       />
                     </div>
@@ -278,7 +211,7 @@
                       <input
                         id="edit-twitch"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="twitch.tv/mixwell"
                       />
                     </div>
@@ -289,7 +222,7 @@
                       <input
                         id="edit-vlr"
                         type="text"
-                        class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                        class="sm:w-full w-32 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="vlr.gg/player/93/mixwell"
                       />
                     </div>
@@ -298,9 +231,14 @@
                       <input
                         id="edit-image"
                         type="file"
-                        class="w-[181px] bg-white placeholder-gray-400 text-sm text-gray-900 rounded-lg border border-gray-300 cursor-pointer focus:ring-lpurple focus:border-lpurple before:bg-gray-50"
+                        class="sm:w-[181px] w-32 bg-white placeholder-gray-400 text-sm text-gray-900 rounded-lg border border-gray-300 cursor-pointer focus:ring-lpurple focus:border-lpurple before:bg-gray-50"
                       />
+                      <div id="edit-error-image" class="italic text-red-500 text-sm"></div>
                     </div>
+                  </div>
+                  <div class="items-center flex mt-3">
+                    <label for="edit-status" class="cursor-pointer">Currently playing in a team</label>
+                    <input type="checkbox" name="roles" id="edit-status" value="6295dbd85497952302ad02ad" class="ml-3 w-5 h-5 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent">
                   </div>
                 </div>
 
@@ -308,13 +246,13 @@
                   <!-- Langues  -->
                   <div>
                     <div class="flex items-end">
-                      <div class="h-[74px] w-[181px] relative">
+                      <div class="h-[74px] sm:w-[181px] w-32 relative">
                         <label for="edit-langues" class="w-full block p-1">Langues<span class="text-red-500">*</span></label>
                         <div id="edit-error-langues" class="italic absolute -bottom-5 text-red-500 text-sm"></div>
                         <select
                           id="edit-langues"
                           type="text"
-                          class="w-[181px] z-10 absolute rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                          class="sm:w-[181px] w-32 z-10 absolute rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
                           placeholder="Natal country"
                           onfocus="this.size=7;"
                           onblur="this.size=1;"
@@ -343,12 +281,12 @@
                   <div>
                     <!--Roles --->
                     <div class="flex items-end">
-                      <div class="h-[74px] w-[181px]">
+                      <div class="h-[74px] sm:w-[181px] 32">
                         <label for="edit-roles" class="w-full block p-1">Roles</label>
                         <select
                           id="edit-roles"
                           type="text"
-                          class="w-[181px] z-0 relative rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                          class="sm:w-[181px] w-32 z-0 relative rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
                           placeholder="Natal country"
                           onfocus="this.size=5;"
                           onblur="this.size=1;"
@@ -386,7 +324,7 @@
                           id="edit-start_date"
                           min="1"
                           max="12"
-                          class="w-20 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                          class="sm:w-20 w-16 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         />
                       </div>
                       <div>
@@ -397,7 +335,7 @@
                           id="edit-end_date"
                           min="1"
                           max="12"
-                          class="w-20 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                          class="sm:w-20 w-16 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         />
                       </div>
                       <div class="h-[74px]">
@@ -405,7 +343,7 @@
                         <select
                           id="edit-clubs"
                           type="text"
-                          class="w-36 relative rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                          class="sm:w-36 w-28 relative rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
                           placeholder="Natal country"
                           onfocus="this.size=5;"
                           onblur="this.size=1;"
@@ -414,7 +352,7 @@
                       </div>
                     </div>
                     <div id="edit-errors_club" class="text-sm text-red-500 italic"></div>
-                    <div class="flex justify-between">
+                    <div class="flex justify-between w-72 sm:w-full">
                       <div id="edit-add-clubs" class="p-2 flex flex-col"></div>
                       <div class="flex flex-col gap-2 items-end">
                         <button
@@ -538,25 +476,13 @@
         </div>
       </section>
       <section class="container md:text-lg mx-auto xl:mt-0 p-7 pt-0 mb-10 xl:mb-0 md:mt-5 xl:pb-0 md:w-[700px] lg:w-full text-sm max-w-[1160px] text-white">
-        <div class="bg-white/[.1] rounded-lg w-full p-5">
-          <p class="underline">Current team</p>
-          <div class="bg-white/[.2] flex gap-3 p-2 rounded-md mt-2">
-            <div>G2-Esports</div>
-            <div>Febrero 2020 - Febrero 2022</div>
-          </div>
-          <p class="underline mt-2">Past teams</p>
-          <div class="bg-white/[.2] flex gap-3 p-2 rounded-md mt-2">
-            <div>G2-Esports</div>
-            <div>Febrero 2020 - Febrero 2022</div>
-          </div>
-          <div class="bg-white/[.2] flex gap-3 p-2 rounded-md mt-2">
-            <div>G2-Esports</div>
-            <div>Febrero 2020 - Febrero 2022</div>
-          </div>
-        </div>
+        <div class="bg-white/[.1] rounded-lg w-full p-5" id="pp-clubs">
+          <p class="underline">Historial</p>
+          
+          
       </section>
     </div>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script type="module" src="../../js/index.js"></script>
+    <script type="module" src="../../js/personal_profile.js"></script>
   </body>
 </html>
