@@ -12,6 +12,13 @@ function user(id) {
       $('#pp-image').attr('src', data.image);
       paintLanguesAndRoles(data.language, 'langues');
       paintLanguesAndRoles(data.role, 'role');
+      $('#pp-twitter').attr('href', data.linkTwitter);
+      $('#pp-twitch').attr('href', data.linkTwitch);
+      $('#pp-vlr').attr('href', data.linkVlr);
+
+      $('#pp-avatar').attr('src', data.image);
+      $('#pp-menu-name').text(data.name);
+      $('#pp-menu-email').text(data.email);
     });
 }
 function paintLanguesAndRoles(lan_rol, type) {

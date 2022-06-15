@@ -21,7 +21,7 @@
             type="button"
             class="rounded-lg border border-lpurple px-3 py-2 text-center text-sm font-medium text-white hover:border-white hover:bg-lpurple focus:ring-transparent sm:px-5 sm:py-2.5"
             type="button"
-            data-modal-toggle="authentication-modal"
+            data-modal-toggle="register-modal"
           >
             Register
           </button>
@@ -29,16 +29,16 @@
       </div>
     </nav>
 
-    <!-- Main modal -->
-    <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
-      <div class="relative mt-24 h-full w-full max-w-md p-4 md:h-auto">
+    <!-- Main modal edit profile -->
+    <div id="register-modal" tabindex="-1" aria-hidden="true" class="h-modal fixed top-0 right-0 left-0 z-50 hidden w-full overflow-y-auto overflow-x-hidden md:inset-0 md:h-full">
+      <div class="relative mt-24 xl:mt-0 w-full h-full max-w-[850px] p-4 md:h-auto">
         <!-- Modal content -->
-        <div class="relative rounded-lg bg-white shadow">
+        <div class="relative rounded-lg bg-white w-full shadow">
           <div class="flex justify-end p-2">
             <button
               type="button"
               class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
-              data-modal-toggle="authentication-modal"
+              data-modal-toggle="register-modal"
             >
               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -49,7 +49,290 @@
               </svg>
             </button>
           </div>
-          <form class="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8" action="#"></form>
+          <p class="text-center xl:text-2xl font-bold">Register</p>
+          <form class="space-y-6 px-6 py-6" action="#">
+            <div class="w-96 gap-5 flex">
+              <div>
+                <div class="flex gap-3">
+                  <!-- Email/Password -->
+                  <div>
+                    <label for="edit-password" class="w-full block p-1">Account email <span class="text-red-500">*</span></label>
+                    <input
+                      id="edit-email"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="your@private/public.email"
+                    />
+                    <div id="edit-error-email" class="italic text-red-500 text-sm"></div>
+                  </div>
+                  <div>
+                    <label for="edit-password" class="w-full block p-1">Password<span class="text-red-500">*</span></label>
+                    <input
+                      id="edit-password"
+                      type="password"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Passowrd"
+                    />
+                    <div id="edit-error-password" class="italic text-red-500 text-sm block"></div>
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <!-- Name/Surname -->
+                  <div>
+                    <label for="edit-name" class="w-full block p-1">Name <span class="text-red-500">*</span></label>
+                    <input
+                      id="edit-name"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Name"
+                    />
+                    <div id="edit-error-name" class="italic text-red-500 text-sm"></div>
+                  </div>
+                  <div>
+                    <label for="edit-surname" class="w-full block p-1">Surname<span class="text-red-500">*</span></label>
+                    <input
+                      id="edit-surname"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Surame"
+                    />
+                    <div id="edit-error-surname" class="italic text-red-500 text-sm"></div>
+                  </div>
+                </div>
+
+                <!-- Contact email and nickanme -->
+                <div class="flex gap-3 mt-3">
+                  <div>
+                    <label for="edit-contactEmail" class="w-full block p-1">Contact email <span class="text-red-500">*</span></label>
+                    <input
+                      id="edit-contactEmail"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="example@g.com"
+                    />
+                    <div id="edit-error-contactEmail" class="italic text-red-500 text-sm"></div>
+                  </div>
+                  <div>
+                    <label for="edit-nickName" class="w-full block p-1">Nickname <span class="text-red-500">*</span></label>
+                    <input
+                      id="edit-nickName"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Nickname"
+                    />
+                    <div id="edit-error-nickName" class="italic text-red-500 text-sm"></div>
+                  </div>
+                </div>
+                <!-- Nata/Resident countrye -->
+                <div class="flex gap-3 mt-3">
+                  <div class="relative h-[74px] w-[181px]">
+                    <label for="edit-natal_country" class="w-full block p-1">Natal <span class="text-red-500">*</span></label>
+                    <div id="edit-error-natal_country" class="italic absolute -bottom-5 text-red-500 text-sm"></div>
+                    <select
+                      id="edit-natal_country"
+                      type="text"
+                      class="w-[181px] rounded-lg absolute border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Natal country"
+                      onfocus="this.size=5;"
+                      onblur="this.size=1;"
+                      onchange="this.size=1; this.blur()"
+                    ></select>
+                  </div>
+
+                  <div class="relative h-[74px] w-[181px]">
+                    <label for="edit-resident_country" class="w-full block p-1">Resident</label>
+                    <select
+                      id="edit-resident_country"
+                      type="text"
+                      class="w-[181px] rounded-lg border absolute overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                      placeholder="Natal country"
+                      onfocus="this.size=5;"
+                      onblur="this.size=1;"
+                      onchange="this.size=1; this.blur()"
+                    ></select>
+                  </div>
+                </div>
+                <div class="flex gap-3 mt-3">
+                  <div>
+                    <label for="edit-twitter" class="w-full block p-1">Link twitter</label>
+                    <input
+                      id="edit-twitter"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="https://twitter.com/ccrsitea34"
+                    />
+                  </div>
+                  <div>
+                    <label for="edit-twitch" class="w-full block p-1">Link twitch</label>
+                    <input
+                      id="edit-twitch"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="https://www.twitch.tv/entrellaves"
+                    />
+                  </div>
+                </div>
+                <div class="flex gap-3 mt-3">
+                  <div>
+                    <label for="edit-twitter" class="w-full block p-1">Link vlr</label>
+                    <input
+                      id="edit-vlr"
+                      type="text"
+                      class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      placeholder="https://www.vlr.gg/player/93/mixwell"
+                    />
+                  </div>
+                  <div>
+                    <label for="edit-image" class="w-full block p-1">Image</label>
+                    <input
+                      accept="image/png, image/jpeg"
+                      id="edit-image"
+                      type="file"
+                      class="w-[181px] bg-white placeholder-gray-400 text-sm text-gray-900 rounded-lg border border-gray-300 cursor-pointer focus:ring-lpurple focus:border-lpurple before:bg-gray-50"
+                    />
+                    <div id="edit-error-image" class="italic text-red-500 text-sm"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <!-- Langues  -->
+                <div>
+                  <div class="flex items-end">
+                    <div class="h-[74px] w-[181px] relative">
+                      <label for="edit-langues" class="w-full block p-1">Langues<span class="text-red-500">*</span></label>
+                      <div id="edit-error-langues" class="italic absolute -bottom-5 text-red-500 text-sm"></div>
+                      <select
+                        id="edit-langues"
+                        type="text"
+                        class="w-[181px] z-10 absolute rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                        placeholder="Natal country"
+                        onfocus="this.size=7;"
+                        onblur="this.size=1;"
+                        onchange="this.size=1; this.blur()"
+                      ></select>
+                    </div>
+                    <button
+                      type="button"
+                      id="edit-add-langues-btn"
+                      class="ml-3 h-10 w-16 justify-end bg-mpurple rounded-lg text-sm text-white hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1"
+                    >
+                      Add
+                    </button>
+                    <button
+                      type="button"
+                      id="edit-delete-langues-btn"
+                      class="ml-3 h-10 text-white w-16 justify-end bg-mpurple rounded-lg text-sm hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                  <div>
+                    <div id="edit-add-langues" class="p-2 flex text-lg mt-2 gap-3 flex-wrap"></div>
+                  </div>
+                </div>
+                <div>
+                  <!--Roles --->
+                  <div class="flex items-end">
+                    <div class="h-[74px] w-[181px]">
+                      <label for="edit-roles" class="w-full block p-1">Roles</label>
+                      <select
+                        id="edit-roles"
+                        type="text"
+                        class="w-[181px] z-0 relative rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                        placeholder="Natal country"
+                        onfocus="this.size=5;"
+                        onblur="this.size=1;"
+                        onchange="this.size=1; this.blur()"
+                      ></select>
+                    </div>
+                    <button
+                      type="button"
+                      id="edit-add-roles-btn"
+                      class="ml-3 h-10 w-16 justify-end bg-mpurple rounded-lg text-sm text-white hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1"
+                    >
+                      Add
+                    </button>
+                    <button
+                      type="button"
+                      id="edit-delete-roles-btn"
+                      class="ml-3 h-10 text-white w-16 justify-end bg-mpurple rounded-lg text-sm hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                  <div>
+                    <div id="edit-add-roles" class="p-2 flex text-lg gap-3 flex-wrap"></div>
+                  </div>
+                </div>
+                <div class="p-1 text-lg mt-3">Add current and past clubs</div>
+                <div>
+                  <!-- Clubs -->
+                  <div class="flex gap-3 items-end">
+                    <div>
+                      <label class="w-full block p-1" for="edit-start_date">Date Entry</label>
+                      <input
+                        type="text"
+                        placeholder="01/2020"
+                        id="edit-start_date"
+                        min="1"
+                        max="12"
+                        class="w-20 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      />
+                    </div>
+                    <div>
+                      <label class="p-1 w-full block" for="edit-end_date">Date Exit</label>
+                      <input
+                        type="text"
+                        placeholder="01/2022"
+                        id="edit-end_date"
+                        min="1"
+                        max="12"
+                        class="w-20 rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
+                      />
+                    </div>
+                    <div class="h-[74px]">
+                      <label for="edit_clubs" class="w-full block p-1">Clubs</label>
+                      <select
+                        id="edit-clubs"
+                        type="text"
+                        class="w-36 relative rounded-lg border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+                        placeholder="Natal country"
+                        onfocus="this.size=5;"
+                        onblur="this.size=1;"
+                        onchange="this.size=1; this.blur()"
+                      ></select>
+                    </div>
+                  </div>
+                  <div id="edit-errors_club" class="text-sm text-red-500 italic"></div>
+                  <div class="flex justify-between">
+                    <div id="edit-add-clubs" class="p-2 flex flex-col"></div>
+                    <div class="flex flex-col gap-2 items-end">
+                      <button
+                        type="button"
+                        id="edit-add-clubs-btn"
+                        class="ml-3 mt-2 h-8 w-16 justify-end bg-mpurple rounded-lg text-sm text-white hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1"
+                      >
+                        Add
+                      </button>
+                      <button
+                        type="button"
+                        id="edit-delete-clubs-btn"
+                        class="ml-3 h-8 text-white w-16 justify-end bg-mpurple rounded-lg text-sm hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex justify-center">
+              <button type="button" id="edit-register" class="h-10 w-20 justify-end bg-mpurple rounded-lg text-white hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1">
+                Register
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

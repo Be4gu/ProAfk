@@ -127,9 +127,9 @@ $('#edit-save').click(function createJson() {
     const token = JSON.parse(window.localStorage.getItem('log'));
     console.log(token);
     if (file !== undefined) {
-      saveImage(file, '62962920301744dbfdaa3f02');
+      saveImage(file, idUser);
     }
-    const url = `http://localhost:3001/api/users/62962920301744dbfdaa3f02`;
+    const url = `http://localhost:3001/api/users/${idUser}`;
     fetch(url, {
       method: 'PUT',
       headers: {

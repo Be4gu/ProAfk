@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit Profile</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="../../dist/output.css" />
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js "></script>
+  </head>
+
+  <body class="bg-black h-auto md:h-screen">
+    <nav class="md:mb-3 rounded border-gray-200 bg-white/[.12] px-2 py-2.5 sm:px-4">
+      <div class="container mx-auto flex max-w-[1160px] flex-wrap items-center justify-between">
+        <div class="flex items-center">
+          <img src="../../image/logo_white.png" class="mr-3 h-6 sm:h-9" alt="AFK Logo" />
+          <div class="relative mr-3 hidden sm:block md:mr-0">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 fill-white text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="main-search"
+              class="ml-2 block w-full rounded-lg border border-dprimary bg-white/[.16] p-2 pl-10 text-white placeholder-white focus:border-mpurple focus:ring-transparent sm:text-sm"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+        <div class="flex md:order-2">
+          <button
+            type="button"
+            class="ml-3 h-10 w-10 flex items-center rounded-lg text-sm text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:hidden"
+            type="button"
+            data-modal-toggle="authentication-modal"
+          >
+            <svg class="h-6 w-6 mx-auto fill-white text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <button
+            data-collapse-toggle="mobile-menu"
+            type="button"
+            class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6 fill-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg class="hidden h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full items-center justify-between md:order-3 hidden md:flex md:w-auto" id="mobile-menu">
+          <ul class="mt-4 flex flex-col items-center md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+            <li>
+              <button type="button" class="user h-10 w-10 truncate rounded-full border-2 border-white bg-white">
+                <img
+                  id="pp-avatar"
+                  type="button"
+                  data-dropdown-toggle="userDropdown"
+                  data-dropdown-placement="bottom-start"
+                  class="h-9 w-9 cursor-pointer object-cover rounded-full"
+                  src=""
+                  alt="User dropdown"
+                />
+              </button>
+              <div id="userDropdown" class="z-10 hidden w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
+                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                  <div id="pp-menu-name"></div>
+                  <div class="truncate font-medium" id="pp-menu-email">oscarcañellas@gmail.com</div>
+                </div>
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownInformationButton">
+                  <li>
+                    <a href="personal_profile.html" class="block px-4 py-2 hover:bg-white/[.12]">Profile</a>
+                  </li>
+                  <li>
+                    <a
+                      href="../../index.html"
+                      onclick="localStorage.removeItem('log')"
+                      class="inline-flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Sign out<svg xmlns="http://www.w3.org/2000/svg" class="mt-1 ml-5 h-4 w-4" viewBox="0 0 512 512">
+                        <path
+                          d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z"
+                        /></svg
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="container mx-auto p-3 pb-0 text-sm max-w-[1160px] text-white flex flex-col sm:flex-row sm:p-10 sm:text-base">
+      <div class="bg-white/[.1] w-full p-5 rounded-lg justify-between sm:order-2 sm:w-56">
+        <p class="text-center mb-2">Roles</p>
+        <div class="flex gap-2 justify-around w-full sm:flex-col">
+          <div class="items-center flex flex-col sm:flex-row sm:justify-between">
+            <label for="filter-igl" class="cursor-pointer">IGL</label>
+            <input
+              type="checkbox"
+              name="roles"
+              id="filter-igl"
+              value="6295dbd85497952302ad02b1"
+              class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent"
+            />
+          </div>
+          <div class="items-center flex flex-col sm:flex-row sm:justify-between">
+            <label for="filter-sentinel" class="cursor-pointer">Sentinel</label>
+            <input
+              type="checkbox"
+              name="roles"
+              id="filter-sentinel"
+              value="6295dbd85497952302ad02ad"
+              class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent"
+            />
+          </div>
+          <div class="items-center flex flex-col sm:flex-row sm:justify-between">
+            <label for="filter-duelist" class="cursor-pointer">Duelist</label>
+            <input
+              type="checkbox"
+              name="roles"
+              id="filter-duelist"
+              value="6295dbd85497952302ad02af"
+              class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent"
+            />
+          </div>
+          <div class="items-center flex flex-col sm:flex-row sm:justify-between">
+            <label for="filter-controller" class="cursor-pointer">Controller</label>
+            <input
+              type="checkbox"
+              name="roles"
+              id="filter-controller"
+              value="6295dbd85497952302ad02b3"
+              class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent"
+            />
+          </div>
+          <div class="items-center flex flex-col sm:flex-row sm:justify-between">
+            <label for="filter-flex" class="cursor-pointer">Flex</label>
+            <input
+              type="checkbox"
+              name="roles"
+              id="filter-flex"
+              value="6295dbd85497952302ad02b5"
+              class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent"
+            />
+          </div>
+        </div>
+        <div class="w-full">
+          <p class="text-center my-3">Country</p>
+          <div class="relative h-12 sm:h-28">
+            <select
+              id="edit-natal_country"
+              type="text"
+              class="w-32 absolute rounded-lg z-10 left-2 sm:left-0 border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+              onfocus="this.size=5;"
+              onblur="this.size=1;"
+              onchange="this.size=1; this.blur()"
+            >
+              <option value="">Natal</option>
+            </select>
+            <select
+              id="edit-resident_country"
+              type="text"
+              class="w-32 rounded-lg absolute right-2 sm:left-0 sm:top-14 border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+              onfocus="this.size=5;"
+              onblur="this.size=1;"
+              onchange="this.size=1; this.blur()"
+            >
+              <option value="">Resident</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex justify-between sm:flex-col">
+          <div class="relative h-20 w-3/6">
+            <label class="text-center mb-1 block">Language</label>
+            <select
+              id="edit-langues"
+              type="text"
+              class="w-32 z-0 absolute rounded-lg left-2 sm:left-0 border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+              placeholder="Natal country"
+              onfocus="this.size=7;"
+              onblur="this.size=1;"
+              onchange="this.size=1; this.blur()"
+            >
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="flex items-center mx-auto sm:my-2">
+            <label for="filter-inncative" class="cursor-pointer mr-3">Innactive</label>
+            <input type="checkbox" id="filter-inncative" value="false" class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent" />
+          </div>
+        </div>
+        <div class="w-full flex justify-center">
+          <button type="button" id="filter-search" class="h-10 w-20 justify-end bg-mpurple rounded-lg text-white hover:bg-lpurple focus:outline-none focus:ring-2 focus:ring-gray-200 p-1">
+            Search
+          </button>
+        </div>
+      </div>
+      <div class="bg-white/[.1] w-full p-5 rounded-lg justify-between sm:order-1 sm:mr-10 mt-5 sm:mt-0" id="result-filter"></div>
+    </section>
+
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script type="module" src="../../js/index2.js"></script>
+  </body>
+</html>

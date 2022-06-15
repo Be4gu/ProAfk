@@ -81,26 +81,29 @@
               <li>
                 <button type="button" class="user h-10 w-10 truncate rounded-full border-2 border-white bg-white">
                   <img
-                    id="avatar"
+                    id="pp-avatar"
                     type="button"
                     data-dropdown-toggle="userDropdown"
                     data-dropdown-placement="bottom-start"
                     class="h-9 w-9 cursor-pointer object-cover rounded-full"
-                    src="../../image/mixwell.png"
+                    src=""
                     alt="User dropdown"
                   />
                 </button>
                 <div id="userDropdown" class="z-10 hidden w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                   <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div>Oscar Cañellas</div>
-                    <div class="truncate font-medium">oscarcañellas@gmail.com</div>
+                    <div id="pp-menu-name"></div>
+                    <div class="truncate font-medium" id="pp-menu-email">oscarcañellas@gmail.com</div>
                   </div>
                   <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownInformationButton">
                     <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-white/[.12]">Profile</a>
+                      <a href="personal_profile.html" class="block px-4 py-2 hover:bg-white/[.12]">Profile</a>
                     </li>
                     <li>
-                      <a href="#" class="inline-flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                      <a
+                        href="../../index.html"
+                        onclick="localStorage.removeItem('log')"
+                        class="inline-flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                         >Sign out<svg xmlns="http://www.w3.org/2000/svg" class="mt-1 ml-5 h-4 w-4" viewBox="0 0 512 512">
                           <path
                             d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z"
@@ -187,7 +190,7 @@
                   <div class="flex gap-3">
                     <!-- Name/Surname -->
                     <div>
-                      <label for="edit-name" class="w-full block p-1">Name <span class="text-red-500">*</span></label>
+                      <label for="edit-name" class="w-full block p-1">Name<span class="text-red-500">*</span></label>
                       <input
                         id="edit-name"
                         type="text"
@@ -204,14 +207,14 @@
                         class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="Surame"
                       />
-                      <div id="edit-error-surname" class="italic text-red-500 text-sm block"></div>
+                      <div id="edit-error-surname" class="italic text-red-500 text-sm"></div>
                     </div>
                   </div>
 
                   <!-- Contact email and nickanme -->
                   <div class="flex gap-3 mt-3">
                     <div>
-                      <label for="edit-contactEmail" class="w-full block p-1">Contact email <span class="text-red-500">*</span></label>
+                      <label for="edit-contactEmail" class="w-full block p-1">Contact email<span class="text-red-500">*</span></label>
                       <input
                         id="edit-contactEmail"
                         type="text"
@@ -221,20 +224,20 @@
                       <div id="edit-error-contactEmail" class="italic text-red-500 text-sm"></div>
                     </div>
                     <div>
-                      <label for="edit-nickName" class="w-full block p-1">Nickname <span class="text-red-500">*</span></label>
+                      <label for="edit-nickName" class="w-full block p-1">Nickname<span class="text-red-500">*</span></label>
                       <input
                         id="edit-nickName"
                         type="text"
                         class="w-full rounded-lg border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 overflow-hidden focus:ring-lpurple focus:border-lpurple"
                         placeholder="Nickname"
                       />
+                      <div id="edit-error-nickName" class="italic text-red-500 text-sm"></div>
                     </div>
-                    <div id="edit-error-nickName" class="italic text-red-500 text-sm"></div>
                   </div>
                   <!-- Nata/Resident countrye -->
                   <div class="flex gap-3 mt-3">
                     <div class="relative h-[74px] w-[181px]">
-                      <label for="edit-natal_country" class="w-full block p-1">Natal <span class="text-red-500">*</span></label>
+                      <label for="edit-natal_country" class="w-full block p-1">Natal<span class="text-red-500">*</span></label>
                       <div id="edit-error-natal_country" class="italic absolute -bottom-5 text-red-500 text-sm"></div>
                       <select
                         id="edit-natal_country"
@@ -306,7 +309,7 @@
                   <div>
                     <div class="flex items-end">
                       <div class="h-[74px] w-[181px] relative">
-                        <label for="edit-langues" class="w-full block p-1">Langues</label>
+                        <label for="edit-langues" class="w-full block p-1">Langues<span class="text-red-500">*</span></label>
                         <div id="edit-error-langues" class="italic absolute -bottom-5 text-red-500 text-sm"></div>
                         <select
                           id="edit-langues"
@@ -520,15 +523,15 @@
             <div class="flex flex-col lg:flex-row lg:justify-around">
               <div class="flex gap-2 my-1">
                 <img src="../../image/icons/claros/twitter.png" class="w-5 h-5 md:w-7 md:h-7" alt="logo_twitter" />
-                <a href="http://twitter.com/mixwell" class="hover:underline decoration-lcyan">twitter.com/mixwell</a>
+                <a href="" class="hover:underline decoration-lcyan" id="pp-twitter">twitter.com/mixwell</a>
               </div>
               <div class="flex gap-2 my-1">
                 <img src="../../image/icons/claros/twitch.png" class="w-5 h-5 md:w-7 md:h-7" alt="logo-twitch" />
-                <a href="http://twitter.com/mixwell" class="hover:underline decoration-lcyan">twitch.tv/mixwell</a>
+                <a href="" class="hover:underline decoration-lcyan" id="pp-twitch">twitch.tv/mixwell</a>
               </div>
               <div class="flex gap-2 my-1">
                 <img src="../../image/icons/claros/vlr.png" class="w-5 h-5 md:w-7 md:h-7" alt="logo_vlr" />
-                <a href="http://vlr.com/mixwell" class="hover:underline decoration-lcyan">vlr.com/mixwell</a>
+                <a href="" class="hover:underline decoration-lcyan" id="pp-vlr">vlr.com/mixwell</a>
               </div>
             </div>
           </div>

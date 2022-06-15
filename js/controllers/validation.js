@@ -41,26 +41,45 @@ function validateDate(dateEntry, dateExit) {
   return true;
 }
 
-function validateReuired(list) {
+function validateReuired(list, register) {
+  restetErrors();
   let errors = [];
   if (list.name === '') errors.push({ name: 'name', error: 'Name is required!' });
-  else if (!regexString(list.name)) errors.push({ name: 'name', error: 'Name format is incorrect!' });
+  else if (!regexString(list.name)) errors.push({ name: 'name', error: 'Incorrect format (aA-zZ)' });
 
   if (list.surname === '') errors.push({ name: 'surname', error: 'Surname is required!' });
-  else if (!regexString(list.surname)) errors.push({ name: 'surname', error: 'Surname format is incorrect!' });
+  else if (!regexString(list.surname)) errors.push({ name: 'surname', error: 'Incorrect format (aA-zZ)' });
 
   if (list.contactEmail === '') errors.push({ name: 'contactEmail', error: 'Contact email is required!' });
   else if (!regexEmail(list.contactEmail)) errors.push({ name: 'contactEmail', error: 'Contact format is incorrect!' });
 
   if (list.nickName === '') errors.push({ name: 'nickName', error: 'Nickname is required!' });
-  else if (!regexStringNumber(list.nickName)) errors.push({ name: 'nickName', error: 'Nickname format is incorrect!' });
-  if (list.natalCountry === '') errors.push({ natalCountry: 'Natal country is required!' });
+  else if (!regexStringNumber(list.nickName)) errors.push({ name: 'nickName', error: 'Incorrect format (aA-zZ, 0-9)' });
+
+  if (list.natalCountry === '') errors.push({ name: 'natalCountry', error: 'Natal country is required!' });
 
   if (list.list_langues.length === 0) errors.push({ name: 'langues', error: 'Language is required!' });
+
+  if (register === 'register') {
+    if (list.email === '') errors.push({ name: 'email', error: 'Email is required!' });
+    else if (!regexEmail(list.email)) errors.push({ name: 'email', error: 'Email format is incorrect!' });
+
+    if (list.password === '') errors.push({ name: 'password', error: 'Password is required!' });
+  }
 
   if (errors.length > 0) return errors;
 
   return true;
+}
+function restetErrors() {
+  $('#edit-error-email').text('');
+  $('#edit-error-password').text('');
+  $('#edit-error-name').text('');
+  $('#edit-error-surname').text('');
+  $('#edit-error-contactEmail').text('');
+  $('#edit-error-nickName').text('');
+  $('#edit-error-langues').text('');
+  $('#edit-error-natalCountry').text('');
 }
 
 function regexString(input) {
@@ -82,7 +101,6 @@ function userAndPassword(user, pass) {
   else if (!regexEmail(user)) errors.push({ name: 'user', error: 'Email has malformated' });
   if (pass === '') errors.push({ name: 'pass', error: 'Password is required' });
   if (errors.length !== 0) return errors;
-  console.log(errors);
   return true;
 }
-export { validateDate, paintSlashDate, validateReuired, userAndPassword };
+export { validateDate, paintSlashDate, validateReuired, userAndPassword, regexEmail };

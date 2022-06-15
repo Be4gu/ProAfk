@@ -9,7 +9,6 @@ function paintSelect(end_url, select, selecteds) {
     .then((resp) => resp.json())
     .then((data) => {
       data.forEach((ele) => {
-        console.log(selecteds);
         if (ele.name === selecteds) {
           $(`#edit-${select}`).append($('<option selected="selected"></option>').val(ele.id).html(ele.name));
         } else {
@@ -31,11 +30,10 @@ function addRoleLang(role_lang) {
   if (role_lang === 'langues') {
     if (list_langues.find((ele) => ele.id === lang_val) == undefined) {
       list_langues.push({ name: lang_text, id: lang_val });
-      console.log(list_langues);
       paintRoleLang(role_lang, list_langues);
     }
   } else if (role_lang === 'roles') {
-    if (list_roles.find((ele) => ele.name === lang_val) == undefined) {
+    if (list_roles.find((ele) => ele.id === lang_val) == undefined) {
       list_roles.push({ name: lang_text, id: lang_val });
       paintRoleLang(role_lang, list_roles);
     }
