@@ -20,6 +20,7 @@ fetch(`${urlBase}users/${id}`)
     $('#p-natalCountry').text(data.natalCountry.name);
     $('#p-residentCountry').text(data.resCountry.name);
     $('#p-contactEmail').text(data.contactEmail);
+    $('#p-status').text(data.status ? '(Active)' : '(Inactive)');
 
     $('#p-natalImg').attr('src', data.natalCountry.flag);
     $('#p-resImg').attr('src', data.resCountry.flag);

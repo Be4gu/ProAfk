@@ -40,23 +40,24 @@ function paintLanguesAndRoles(lan_rol, type) {
 }
 function paintClubs(clubs) {
   clubs.forEach((ele) => {
-    $('#p-clubs').append(`<div class="box_club w-full  border-t-2  rounded-lg my-3">
-    <div class="w-full flex items-center p-2">
+    console.log(ele.idClub.id);
+    $('#p-clubs').append(`<a href="club.html?id=${ele.idClub.id}" class="pruebas w-full block border-t-2 my-3">
+    <div class="box_club w-full flex items-center p-2 my-2 rounded-lg">
       <img src="${ele.idClub.photo}" class="w-14 h-14" alt="Logo G2" />
       <div class="ml-5">
         <div>${ele.idClub.name}</div>
         <div>${ele.entryDate} - ${ele.exitDate}</div>
       </div>
     </div>
-  </div>`);
+  </a>`);
     $('#prueba').addClass('border-cyan-400');
   });
 }
 function paintClubsEdit(clubs) {
   clubs.forEach((ele) => {
-    $('#pp-clubs').append(`<div class="bg-white/[.2] flex gap-3 p-2 rounded-md mt-2" >
+    $('#pp-clubs').append(`<a href="club.html?id=${ele.idClub.id}" class="box_club flex gap-3 p-2 rounded-md mt-2" >
        <div>${ele.idClub.name}: ${ele.entryDate} - ${ele.exitDate}</div>     
-    </div>`);
+    </a>`);
   });
 }
 export { user, paintModalMenu, paintLanguesAndRoles, paintClubsEdit, paintClubs };

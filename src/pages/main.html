@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Edit Profile</title>
+    <title>ProAFK</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
     <link rel="stylesheet" href="../../dist/output.css" />
+    <link rel="icon" type="image/png" href="../../image/ico2.png" />
     <script src=" https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <style>
+      .box_club {
+        background: rgba(255, 255, 255, 0.2);
+        border-top: 2px solid #03dac5;
+      }
+    </style>
   </head>
 
   <body class="bg-black h-auto md:h-screen">
@@ -63,7 +70,7 @@
                   data-dropdown-toggle="userDropdown"
                   data-dropdown-placement="bottom-start"
                   class="h-9 w-9 cursor-pointer object-cover rounded-full"
-                  src=""
+                  src="../../image/user.jpg"
                   alt="User dropdown"
                 />
               </button>
@@ -94,6 +101,7 @@
         </div>
       </div>
     </nav>
+    <h1 class="text-center mt-6 text-[26px] text-lpurple md:text-3xl xl:text-4xl 2xl:text-5xl">Search for your favorite team or player</h1>
     <section class="container mx-auto p-3 pb-0 text-sm max-w-[1160px] text-white flex flex-col sm:flex-row sm:p-10 sm:text-base">
       <div class="bg-white/[.1] w-full p-5 rounded-lg justify-between sm:order-2 sm:w-56">
         <p class="text-center mb-2">Roles</p>
@@ -155,7 +163,7 @@
             <select
               id="edit-natal_country"
               type="text"
-              class="w-32 absolute rounded-lg z-10 left-2 sm:left-0 border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+              class="w-32 absolute rounded-lg sm:z-20 z-10 left-2 sm:left-0 border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
               onfocus="this.size=5;"
               onblur="this.size=1;"
               onchange="this.size=1; this.blur()"
@@ -165,7 +173,7 @@
             <select
               id="edit-resident_country"
               type="text"
-              class="w-32 rounded-lg absolute right-2 sm:left-0 sm:top-14 border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+              class="w-32 rounded-lg absolute sm:z-10 right-2 sm:left-0 sm:top-14 border overflow-auto ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
               onfocus="this.size=5;"
               onblur="this.size=1;"
               onchange="this.size=1; this.blur()"
@@ -180,7 +188,7 @@
             <select
               id="edit-langues"
               type="text"
-              class="w-32 z-0 absolute rounded-lg left-2 sm:left-0 border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
+              class="w-32 sm:z-0 absolute rounded-lg left-2 sm:left-0 border ring-opacity-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:ring-lpurple focus:border-lpurple"
               placeholder="Natal country"
               onfocus="this.size=7;"
               onblur="this.size=1;"
@@ -190,7 +198,7 @@
             </select>
           </div>
           <div class="flex items-center mx-auto sm:my-2">
-            <label for="filter-inncative" class="cursor-pointer mr-3">Innactive</label>
+            <label for="filter-inncative" class="cursor-pointer mr-3">Inactive</label>
             <input type="checkbox" id="filter-inncative" value="false" class="w-4 h-4 text-lpurple cursor-pointer bg-gray-100 rounded-full border-gray-300 focus:ring-transparent" />
           </div>
         </div>

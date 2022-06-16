@@ -1,6 +1,7 @@
 import { list_langues, list_roles, clubs } from './paint_selects.js';
 import { paintSelect, paintRoleLang } from './paint_selects.js';
 import { validateReuired } from './validation.js';
+// import { swal } from '../..node_modules/sweetalert';
 
 function editProfileGetInfo(urlBase, idUser) {
   paintSelect('languages', 'langues');
@@ -92,9 +93,10 @@ function editProfileSave(objJson, idUser, urlBase) {
     const token = JSON.parse(window.localStorage.getItem('log'));
     $('#edit-error-image').text('');
     if (document.getElementById('edit-image').value !== '') {
-      if (file.size < 100000) {
+      const path = file.name.split('.');
+      console.log(path);
+      if (file.size < 100000 && (path[1] === 'png' || path[1] === 'jpg' || path[1] === 'jpeg')) {
         saveImage(file, idUser, urlBase);
-        const url = `${urlBase}users/${idUser}`;
         fetch(`${urlBase}users/${idUser}`, {
           method: 'PUT',
           headers: {
@@ -108,7 +110,7 @@ function editProfileSave(objJson, idUser, urlBase) {
             alert('User updated');
           });
       } else {
-        $('#edit-error-image').text('Image size must be less than 100KB');
+        $('#edit-error-image').text('Image size (max 100KB) or extension (.png, .jpg, .jpeg)');
       }
     } else {
       fetch(`${urlBase}users/${idUser}`, {
@@ -120,8 +122,9 @@ function editProfileSave(objJson, idUser, urlBase) {
         body: JSON.stringify(objJson),
       })
         .then((resp) => resp.json())
-        .then(() => {
-          alert('User updated');
+        .then(async () => {
+          await swal('Updated user!', '', 'success');
+          location.reload();
         });
     }
   }
@@ -220,11 +223,11 @@ function registerUser(urlBase) {
         body: JSON.stringify(objJson),
       })
         .then((resp) => resp.json())
-        .then((data) => {
+        .then(async (data) => {
           if (data.error) {
             alert(data.error);
           } else {
-            alert(data.succes);
+            await swal('Updated user!', '', 'success');
             location.reload();
           }
         });

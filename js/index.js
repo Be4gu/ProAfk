@@ -53,7 +53,7 @@ $('#index-login').click(function () {
     $('#login-error').empty();
     console.log('entra');
     flag.forEach((ele) => {
-      $('#login-error').append(`<p>${ele.error} <p>`);
+      $('#login-error').append(`<p class="text-center">${ele.error} <p>`);
     });
   } else if (flag === true) login(user, pass);
 });

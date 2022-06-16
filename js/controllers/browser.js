@@ -7,10 +7,10 @@ function filter(urlBase) {
   if ($('#edit-natal_country option:selected').val() !== '') array.push({ natalCountry: $('#edit-natal_country option:selected').val() });
   if ($('#edit-resident_country option:selected').val() !== '') array.push({ resCountry: $('#edit-resident_country option:selected').val() });
   if ($('#edit-langues option:selected').val() !== '') array.push({ language: $('#edit-langues option:selected').val() });
-  if ($('#filter-inncative').is(':checked') === true) array.push({ innactive: true });
+  if ($('#filter-inncative').is(':checked') === true) array.push({ status: true });
 
   if (array.length > 0) {
-    fetch(`${urlBase}users/pruebaaaa/${JSON.stringify(array)}`, {
+    fetch(`${urlBase}browser/filter/${JSON.stringify(array)}`, {
       method: 'GET',
     })
       .then((resp) => resp.json())
@@ -19,7 +19,7 @@ function filter(urlBase) {
         $('#result-filter').empty();
         data.forEach((ele) => {
           $('#result-filter').append(`
-        <a href="profile.html?user=${ele.id}" class="bg-white/[.1] w-full h-16 flex items-center mt-2 sm:h-24 border-t-2 justify-between border-lcyan rounded-md">
+        <a href="profile.html?user=${ele.id}" class="box_club bg-white/[.1] p-3 w-full h-16 flex items-center mt-2 sm:h-24 border-t-2 justify-between border-lcyan rounded-md">
           <div class="flex">
             <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white ml-2 overflow-hidden">
               <img src="${ele.image}" />
@@ -33,7 +33,7 @@ function filter(urlBase) {
           </div>
           <div class="flex flex-col mr-5">
             <div class="flex flex-col h-12 sm:h-16 justify-between ml-3">
-              <div>Date1</div>
+            <div>${ele.status !== undefined ? 'Player' : 'Team'}</div>
               <div>ALGO</div>
             </div>
           </div>
@@ -46,7 +46,7 @@ function filter(urlBase) {
 function search(urlBase) {
   const val = document.getElementById('main-search').value.trim();
   if (val !== '') {
-    fetch(`${urlBase}users/pruebaaaa2/${JSON.stringify(val)}`, {
+    fetch(`${urlBase}browser/search/${JSON.stringify(val)}`, {
       method: 'GET',
     })
       .then((resp) => resp.json())
@@ -59,7 +59,7 @@ function search(urlBase) {
 
           ele.nickName === undefined ? ele.name : ele.nickName;
           $('#result-filter').append(`
-        <a href="${url}.html?id=${ele.id}" class="bg-white/[.1] p-3 w-full h-16 flex items-center mt-2 sm:h-24 border-t-2 justify-between border-lcyan rounded-md">
+        <a href="${url}.html?id=${ele.id}" class="box_club bg-white/[.1] p-3 w-full h-16 flex items-center mt-2 sm:h-24 border-t-2 justify-between rounded-md">
           <div class="flex">
             <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white ml-2 overflow-hidden">
               <img src="${ele.image === undefined ? ele.photo : ele.image}" />
@@ -74,7 +74,7 @@ function search(urlBase) {
           <div class="flex flex-col mr-5">
             <div class="flex flex-col h-12 sm:h-16 justify-between ml-3">
               <div>${ele.status !== undefined ? 'Player' : 'Team'}</div>
-              <div>ALGO</div>
+              <div>${ele.contactEmail !== undefined ? ele.contactEmail : ''}</div>
             </div>
           </div>
         </a>`);

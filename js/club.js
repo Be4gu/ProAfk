@@ -6,6 +6,7 @@ import { paintModalMenu } from './controllers/paint_profile.js';
 
 const url = window.location.href.split('=');
 const id = url[1];
+console.log(id);
 const idUser = getToken();
 if (idUser) {
   paintModalMenu(urlBase, idUser);
@@ -14,18 +15,18 @@ if (idUser) {
 fetch(`${urlBase}clubs/${id}`)
   .then((resp) => resp.json())
   .then(function (data) {
-    console.log(data);
+    // console.log(data);
     $('#c-image').attr('src', data.photo);
     $('#c-name').text(data.name);
+    $('#c-numPlayers').text(data.player.length);
     painPlayers(data.player);
   });
 
 function painPlayers(players) {
   players.forEach((ele) => {
-    console.log(ele);
-    $('#c-players').append(`<a href="profile.html?id=${ele.id}" class=" mx-4 h-20 flex items-center mt-2 sm:h-24  rounded-md">
-    <div class="flex">
-      <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white ml-2 overflow-hidden">
+    $('#c-players').append(`<a href="profile.html?id=${ele.id}" class="mx-4 h-20 flex items-center mt-2 sm:h-24  rounded-md">
+    <div class="flex ">
+      <div class="w-20 h-20  rounded-full bg-white ml-2 overflow-hidden">
         <img src="${ele.image}" />
       </div>
       <div class="flex flex-col ">
