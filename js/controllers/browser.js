@@ -7,7 +7,7 @@ function filter(urlBase) {
   if ($('#edit-natal_country option:selected').val() !== '') array.push({ natalCountry: $('#edit-natal_country option:selected').val() });
   if ($('#edit-resident_country option:selected').val() !== '') array.push({ resCountry: $('#edit-resident_country option:selected').val() });
   if ($('#edit-langues option:selected').val() !== '') array.push({ language: $('#edit-langues option:selected').val() });
-  if ($('#filter-inncative').is(':checked') === true) array.push({ status: true });
+  if ($('#filter-inncative').is(':checked') === true) array.push({ status: false });
 
   if (array.length > 0) {
     fetch(`${urlBase}browser/filter/${JSON.stringify(array)}`, {

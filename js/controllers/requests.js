@@ -94,7 +94,6 @@ function editProfileSave(objJson, idUser, urlBase) {
     $('#edit-error-image').text('');
     if (document.getElementById('edit-image').value !== '') {
       const path = file.name.split('.');
-      console.log(path);
       if (file.size < 100000 && (path[1] === 'png' || path[1] === 'jpg' || path[1] === 'jpeg')) {
         saveImage(file, idUser, urlBase);
         fetch(`${urlBase}users/${idUser}`, {
@@ -106,8 +105,9 @@ function editProfileSave(objJson, idUser, urlBase) {
           body: JSON.stringify(objJson),
         })
           .then((resp) => resp.json())
-          .then(() => {
-            alert('User updated');
+          .then(async () => {
+            await swal('Updated user!', '', 'success');
+            location.reload();
           });
       } else {
         $('#edit-error-image').text('Image size (max 100KB) or extension (.png, .jpg, .jpeg)');
@@ -193,11 +193,13 @@ function registerUser(urlBase) {
     const file = $('#edit-image').prop('files')[0];
     $('#edit-error-image').text('');
     if (document.getElementById('edit-image').value !== '') {
-      if (file.size < 100000) {
+      const path = file.name.split('.');
+      if (file.size < 100000 && (path[1] === 'png' || path[1] === 'jpg' || path[1] === 'jpeg')) {
         let reader = new FileReader();
         reader.onloadend = () => {
           objJson.image = reader.result;
-          const url = `${urlBase}/users`;
+          console.log(objJson.image);
+          const url = `${urlBase}users`;
           fetch(url, {
             method: 'POST',
             headers: {
@@ -206,15 +208,18 @@ function registerUser(urlBase) {
             body: JSON.stringify(objJson),
           })
             .then((resp) => resp.json())
-            .then((data) => {});
+            .then(async () => {
+              await swal('User registred!', '', 'success');
+              location.reload();
+            });
         };
         reader.readAsDataURL(file);
       } else {
-        $('#edit-error-image').text('Image size must be less than 100KB');
+        $('#edit-error-image').text('Image size (max 100KB) or extension (.png, .jpg, .jpeg)');
       }
     } else {
       objJson.image = '';
-      const url = `${urlBase}/users`;
+      const url = `${urlBase}users`;
       fetch(url, {
         method: 'POST',
         headers: {
@@ -227,7 +232,7 @@ function registerUser(urlBase) {
           if (data.error) {
             alert(data.error);
           } else {
-            await swal('Updated user!', '', 'success');
+            await swal('User registred!', '', 'success');
             location.reload();
           }
         });
